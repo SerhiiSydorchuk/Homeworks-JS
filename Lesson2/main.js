@@ -43,56 +43,16 @@ book1.author= [name= 'Іван Петренко',
  console.log(book3);
 
  let arrUsers = [
-     user1 = {
-         name: 'Serhii',
-         username: '@sydorchuk',
-         password: 'password1'
-     },
-     user2 = {
-         name: 'Vasya',
-         username: '@vasya',
-         password: 'password2'
-     },
-     user3 = {
-         name: 'Alice',
-         username: '@alice_t',
-         password: 'password3'
-     },
-     user4 = {
-         name: 'Brandon',
-         username: '@brandon_mill',
-         password: 'password4'
-     },
-     user5 = {
-         name: 'Clara',
-         username: '@danny_kim',
-         password: 'password5'
-     },
-     user6 = {
-         name: 'Emily ',
-         username: '@emily_n',
-         password: 'password6'
-     },
-     user7 = {
-         name: 'Emily ',
-         username: '@felix_gon',
-         password: 'password7'
-     },
-     user8 = {
-         name: 'Henry',
-         username: '@henry_lee88',
-         password: 'password8'
-     },
-     user9 = {
-         name: 'Isabella',
-         username: '@isabella_g',
-         password: 'password9'
-     },
-     user10 = {
-         name: 'Jack',
-         username: '@jack_patel',
-         password: 'password10'
-     }
+      {name: 'Serhii', username: '@sydorchuk', password: 'password1' },
+      {name: 'Vasya', username: '@vasya', password: 'password2'},
+      {name: 'Alice', username: '@alice_t',password: 'password3'},
+      {name: 'Brandon', username: '@brandon_mill', password: 'password4'},
+      {name: 'Clara', username: '@danny_kim', password: 'password5'},
+      {name: 'Emily ',username: '@emily_n', password: 'password6' },
+      {name: 'Emily ', username: '@felix_gon', password: 'password7'},
+      {name: 'Henry',username: '@henry_lee88', password: 'password8'},
+      {name: 'Isabella', username: '@isabella_g', password: 'password9'},
+      {name: 'Jack', username: '@jack_patel',password: 'password10'}
  ];
  console.log(arrUsers[0].password);
  console.log(arrUsers[arrUsers.length-9].password);
@@ -106,37 +66,37 @@ book1.author= [name= 'Іван Петренко',
  console.log(arrUsers[arrUsers.length-1].password);
 
  let arrWeather = [
-     monday = {
+     {
          morning: 15  ,
          afternoon: 20,
          night: 18 ,
      },
-     tuesday = {
+     {
          morning: 10 ,
          afternoon:18,
          night: 15,
      },
-     wensday = {
+     {
          morning: 18  ,
          afternoon: 25 ,
          night: 20,
      },
-     thurday = {
+     {
          morning: 20 ,
          afternoon: 28,
          night: 23,
      },
-     friday = {
+     {
          morning: 15 ,
          afternoon: 20,
          night: 18,
      },
-     saturday = {
+     {
          morning: 16  ,
          afternoon: 25,
          night: 10,
      },
-     sunday= {
+     {
          morning: 15 ,
          afternoon: 18,
          night:17 ,
@@ -149,11 +109,11 @@ book1.author= [name= 'Іван Петренко',
 
 
  let x = 1;
- if (x === 0) {
-     console.log('Невірно');
+ if (x !== 0) {
+     console.log('Вірно');
  }
  else  {
-     console.log('Вірно');
+     console.log('Невірно');
  }
 
 
