@@ -1,0 +1,8 @@
+.users-box {
+    width: 100vw;
+    display: flex;
+    flex-wrap: wrap;
+}
+.user-block {
+    width: 50%;
+}
