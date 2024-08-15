@@ -32,24 +32,23 @@ function arrayObj( arr ) {
 arrayObj([1, 2, 3, 4]);
 // #59g0IsA
 // - створити функцію яка створює параграф з текстом та виводить його через document.write. Текст задати через аргумент
-function writeToDocumentParagraph () {
-    return  document.write(`<p>${arguments[0]}</p>`)
+function writeToDocumentParagraph (msg) {
+     document.write(`<p>${msg}</p>`)
     }
 
 writeToDocumentParagraph('hello');
 // #hOL6126
 // - створити функцію яка створює ul з трьома елементами li та виводить його через document.write. Текст li задати через аргумент всім однаковий
- function writeToDocumentList () {
+ function writeToDocumentList (msg) {
      document.write(`
 <ul>
-<li>${arguments[0]}</li>
-<li>${arguments[0]}</li>
-<li>${arguments[0]}</li>
+<li>${msg}</li>
+<li>${msg}</li>
+<li>${msg}</li>
 </ul>
 `)
-
  }
- writeToDocumentList('html');
+  writeToDocumentList(' html ');
 // #0Kxco1edSN
 // - створити функцію яка створює ul з  елементами li. Текст li задати через аргумент всім однаковий. Кількість li визначається другим аргументом, який є числовим (тут використовувати цикл) та виводить його через document.write
 
@@ -60,12 +59,13 @@ writeToDocumentParagraph('hello');
        }
           document.write(`</ul>`)
    }
-   writeToDocumentListItem('hello okten' , 5)
+   writeToDocumentListItem(' hello okten ' , 5)
 // #gEFoxMMO
 // - створити функцію яка приймає масив примітивних елементів (числа,стрінги,булеві), та будує для них список (ul li) та виводить його через document.write
-  let arrList = ['asd',122,'asdfg',12,'qwer'];
+  let arrList = [' ' +
+  'asd ',122,' asdfg ',12,' qwer '];
 function writeToDocumentArr (arr) {
-          document.write(`<ul>`)
+          document.write(`<ul> `)
      for (const arrElement of arr) {
          document.write(`<li>${arrElement}</li>`)
      }
