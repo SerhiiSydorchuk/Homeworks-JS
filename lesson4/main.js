@@ -73,7 +73,6 @@ function writeToDocumentArr (arr) {
  }
  writeToDocumentArr(arrList);
 
-
 // #bovDJDTIjt
 // - створити функцію яка приймає масив об'єктів з наступними полями id,name,age , та виводить їх в документ. Для кожного об'єкту окремий блок.
 let users = [
@@ -96,8 +95,7 @@ let users = [
         <h2>${arrUser.id} ${arrUser.name} Age- ${arrUser.age}</h2>       
        </div>
 `)
-
-      }
+   }
   }
   writeToDocumentUserKey(users);
 
