@@ -8,31 +8,31 @@ let user = {
     age: 31,
     audit() {
         console.log('hello');
-    }
-};
-
-
-let copyObj = (obj) => {
-    for (const key in this) {
-        if (this[key] === undefined || this[key] === null || Number.isNaN(this[key])) {
-          return  JSON.parse(JSON.stringify(obj));
-        }
-    }
-};
-console.log(copyObj(user));
+    },
+   };
 console.log(user);
+user.audit()
 
-let addFn = (obj,) => {
-    let jsonCopy = copyObj(obj);
-    for (const key in obj) {
-         if (typeof obj[key]==='function'){
-             jsonCopy[key] = obj[key];
-         }
+const copyObj = (obj) => {
+    if (obj) {
+        const functionArr = [];
+        for (const key in obj) {
+            if (typeof obj[key] === 'function') {
+                const newFn = obj[key].bind({});
+                functionArr.push({newFn, key});
+            }
+        }
+        const jsonCopyObj = JSON.parse(JSON.stringify(obj));
+        for (const element of functionArr) {
+            jsonCopyObj[element.key] = element.newFn;
+        }
+        console.log(jsonCopyObj);
+        return jsonCopyObj;
     }
-    return  jsonCopy;
-}
-console.log(addFn(user));
 
+};
+let fn = copyObj(user);
+fn.audit();
 // #iz6emEsP2BA
 // - є масив
 let coursesAndDurationArray = [
