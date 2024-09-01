@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<form id="f2">
+    <input id="row" type="number" name="row" placeholder="row">
+    <input id="column" type="number" name="column" placeholder="column">
+    <input id="data" type="text" name="data" placeholder="data" >
+    <button>Create table</button>
+</form>
+ <table id="table"></table>
+
+<script>
+    let tableCreator = document.getElementById('table');
+    let createTable = document.getElementById('f2');
+
+
+    createTable.onsubmit = function (ev) {
+        ev.preventDefault()
+        let row = +this.row.value;
+        let column = +this.column.value;
+        let data = this.data.value;
+        for (let i = 0; i < row; i++) {
+            let tr = document.createElement('tr');
+            tableCreator.appendChild(tr);
+            for (let j = 0; j < column; j++) {
+                let td = document.createElement('td');
+                tr.appendChild(td);
+                td.innerText = data;
+                            }
+        }
+        
+        };
+
+
+    let table = document.body.createElement('table');
+    let tr = document.body.createElement('tr');
+    let td = document.body.createElement('td');
+  /*  tr.appendChild(td);
+    table.appendChild(tr);
+*/
+
+
+    // #kUSgFqWY
+    // Створити 3 інпута та кнопку. Один визначає кількість рядків, другий - кількість ячеєк, третій вмиіст ячеєк.
+    // При натисканні кнопки, вся ця інформація зчитується і формується табличка, з відповідним вмістом.
+</script>
+
+
+
+</body>
+</html>
