@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<div id="carts">
+
+</div>
+<!--#HmvAfRQM-->
+<!-- - взяти https://dummyjson.com/docs/carts та вивести інформацію про всі корзини. Відобразити всі поля кожної корзини.-->
+<script>
+
+    let divCarts = document.getElementById('carts');
+    fetch('https://dummyjson.com/carts')
+        .then(res => res.json())
+        .then(value => {
+            console.log(value);
+            let {carts} = value;
+            for (const cart of carts) {
+                let divCart = document.createElement('div');
+                divCart.innerText = `"id":${cart.id},
+                "total":${cart.total},
+                "discountedTotal":${cart.discountedTotal},
+                "userId": ${cart.userId},
+                     "totalProducts":${cart.totalProducts},
+                     "totalQuantity":${cart.totalQuantity}`;
+                divCarts.appendChild(divCart);
+                let olCart = document.createElement('ol');
+                for (const cartElement of cart.products) {
+                    let li = document.createElement('li')
+                    let h2 = document.createElement('h2');
+                    let p = document.createElement('p');
+                    let img = document.createElement('img')
+                    li.append(h2, p, img);
+                    olCart.appendChild(li);
+                    divCarts.appendChild(olCart);
+                    h2.innerText = `${cartElement.title} `;
+                    p.innerText = `price - ${cartElement.price} quantity - ${cartElement.quantity}`;
+                    img.src = `${cartElement.thumbnail}`;
+                }
+
+            }
+        });
+
+
+
+
+</script>
+</body>
+</html>
