@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<div id="product"></div>
+<button id = back >Back 10 products</button>
+<button id = next >Next 10 products</button>
+<script>//
+    // #NKB0tgWIK1G
+    // ***PAGINATION
+    // зробити масив на 100 об'єктів та дві кнопки prev next
+    // при завантажені сторінки з'являються перші 10 об'єктів.
+    // При натисканні next виводяться наступні 10 об'єктів
+    // При натисканні prev виводяться попередні 10 об'єктів
+
+
+let divProduct = document.getElementById('product');
+let skip = 0;
+let btnNext = document.getElementById('next')
+
+btnNext.onclick = function () {
+    divProduct.innerText = '';
+    let url = new URL(`https://dummyjson.com/products`);
+    url.searchParams.append('skip', skip );
+    url.searchParams.append('limit', 10 );
+    fetch(url)
+        .then(res => res.json())
+        .then(value => {
+            let {products} = value;
+            for (const product of products) {
+                let div = document.createElement('div');
+                divProduct.appendChild(div);
+                div.innerText = ` ${product.id} ${product.title} `;
+            }
+        });
+    skip += 10;
+};
+
+let btnBack = document.getElementById('back');
+btnBack.onclick = function () {
+    divProduct.innerText = '';
+    let url = new URL(`https://dummyjson.com/products`);
+    url.searchParams.append('skip', skip );
+    url.searchParams.append('limit', 10 );
+    fetch(url)
+        .then(res => res.json())
+        .then(value => {
+            let {products} = value;
+            for (const product of products) {
+                let div = document.createElement('div');
+                divProduct.appendChild(div);
+                div.innerText = ` ${product.id} ${product.title} `;
+            }
+        });
+    skip -=10;
+};
+
+
+
+
+</script>
+</body>
+</html>
